@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # This script is only tested on CentOS 6.5 and Ubuntu 12.04 LTS with Percona XtraDB Cluster 5.6.
 # You can customize variables such as MOUNTPOINT, RAIDCHUNKSIZE and so on to your needs.
@@ -14,7 +14,7 @@ RPLPWD=${4}
 ROOTPWD=${5}
 PROBEPWD=${6}
 MASTERIP=${7}
-VERSION=5.5
+VERSION=5.6
 
 MOUNTPOINT="/datadrive"
 RAIDCHUNKSIZE=512
