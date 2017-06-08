@@ -9,6 +9,9 @@ echo mysql-server-5.6 mysql-server/root_password password $dbpass | debconf-set-
 echo mysql-server-5.6 mysql-server/root_password_again password $dbpass | debconf-set-selections
 
 # install the LAMP stack
+apt-add-repository ppa:ondrej/php
+apt-get update
+
 apt-get -y install apache2 mysql-server php7.0 libapache2-mod-php7.0 php7.0-mysql
 
 # write some PHP
