@@ -125,7 +125,7 @@
                         "value": "[parameters('virtualNetworkName')]"
                     },
                     "addressPrefix": {
-                        "value": "[parameters('addressPrefix')]"
+                        "value": "[variables('addressPrefix')]"
                     },
                     "subnetName": {
                         "value": "[parameters('subnetName')]"
