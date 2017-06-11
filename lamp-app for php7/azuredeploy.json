@@ -41,7 +41,7 @@
     },
     "virtualNetworkName": {
         "type": "string",
-        "defaultValue": "mysqlvnet",
+        "defaultValue": "myvnet",
         "metadata": {
             "description": "Virtual network name for the cluster"
         }
@@ -74,7 +74,7 @@
     },
     "ubuntuOSVersion": {
       "type": "string",
-      "defaultValue": "14.04.2-LTS",
+      "defaultValue": "16.04-LTS",
       "allowedValues": [
         "12.04.5-LTS",
         "14.04.2-LTS",
@@ -102,7 +102,7 @@
     "vmStorageAccountContainerName": "vhds",
     "vmSize": "Standard_A2",
     "vmName": "[concat(parameters('uniqueNamePrefix'),'VM')]",
-    "virtualNetworkName": "[concat(parameters('uniqueNamePrefix'),'VNet')]",
+    //"virtualNetworkName": "[concat(parameters('uniqueNamePrefix'),'VNet')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "apiVersion": "2015-06-15",
