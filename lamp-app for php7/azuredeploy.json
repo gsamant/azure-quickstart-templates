@@ -128,10 +128,10 @@
                         "value": "[variables('addressPrefix')]"
                     },
                     "subnetName": {
-                        "value": "[parameters('subnetName')]"
+                        "value": "[variables('subnetName')]"
                     },
                     "subnetPrefix": {
-                        "value": "[parameters('subnetPrefix')]"
+                        "value": "[variables('subnetPrefix')]"
                     },
                     "virtualNetworkExistingRGName": {
                         "value": "[parameters('virtualNetworkExistingRGName')]"
