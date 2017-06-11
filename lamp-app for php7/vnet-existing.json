@@ -5,13 +5,13 @@
         "virtualNetworkName": {
             "type": "string"
         },
-        "virtualNetworkAddressPrefix": {
+        "addressPrefix": {
             "type": "string"
         },
-        "dbSubnetName": {
+        "subnetName": {
             "type": "string"
         },
-        "dbSubnetAddressPrefix": {
+        "subnetPrefix": {
             "type": "string"
         },
         "virtualNetworkExistingRGName": {
@@ -25,7 +25,7 @@
     "resources": [ ],
     "outputs": {
         "dbSubnetRef": {
-            "value": "[concat(variables('vnetID'), '/subnets/', parameters('dbSubnetName'))]",
+            "value": "[concat(variables('vnetID'), '/subnets/', parameters('subnetName'))]",
             "type": "string"
         }
     }

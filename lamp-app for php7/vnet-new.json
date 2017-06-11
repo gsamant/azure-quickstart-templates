@@ -5,13 +5,13 @@
         "virtualNetworkName": {
             "type": "string"
         },
-        "virtualNetworkAddressPrefix": {
+        "addressPrefix": {
             "type": "string"
         },
-        "dbSubnetName": {
+        "subnetName": {
             "type": "string"
         },
-        "dbSubnetAddressPrefix": {
+        "subnetPrefix": {
             "type": "string"
         },
         "virtualNetworkExistingRGName": {
@@ -22,7 +22,7 @@
     "variables": {
         "resourceAPIVersion": "2015-06-15",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
-        "dbSubnet": "[concat(variables('vnetID'),'/subnets/',parameters('dbSubnetName'))]"
+        "dbSubnet": "[concat(variables('vnetID'),'/subnets/',parameters('subnetName'))]"
     },
     "resources": [
       {
@@ -33,14 +33,14 @@
         "properties": {
           "addressSpace": {
             "addressPrefixes": [
-              "[parameters('virtualNetworkAddressPrefix')]"
+              "[parameters('addressPrefix')]"
             ]
           },
           "subnets": [
             {
-              "name": "[parameters('dbSubnetName')]",
+              "name": "[parameters('subnetName')]",
               "properties": {
-                "addressPrefix": "[parameters('dbSubnetAddressPrefix')]"
+                "addressPrefix": "[parameters('subnetPrefix')]"
               }
             }
           ]
