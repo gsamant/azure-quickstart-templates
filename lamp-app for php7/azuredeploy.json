@@ -39,6 +39,39 @@
         "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
       }
     },
+    "virtualNetworkName": {
+        "type": "string",
+        "defaultValue": "mysqlvnet",
+        "metadata": {
+            "description": "Virtual network name for the cluster"
+        }
+    },
+    "vnetNewOrExisting": {
+        "type": "string",
+        "defaultValue": "new",
+        "allowedValues": [
+            "new",
+            "existing"
+        ],
+        "metadata": {
+            "description": "Identifies whether to use new or existing Virtual Network"
+        }
+    },
+    "virtualNetworkExistingRGName": {
+        "type": "string",
+        "defaultValue": "",
+        "metadata": {
+            "description": "If using existing VNet, specifies the resource group for the existing VNet"
+        }
+    },
+    "artifactsPath": {
+            "type": "string",
+            "defaultValue": "https://raw.githubusercontent.com/gsamant/azure-quickstart-templates/lamp-php7/lamp-app%20for%20php7",
+            "metadata": {
+                "description": "template and script file location",
+                "artifactsBaseUrl": "Base URL of the Publisher Template gallery package"
+            }
+    },
     "ubuntuOSVersion": {
       "type": "string",
       "defaultValue": "14.04.2-LTS",
@@ -54,6 +87,8 @@
     }
   },
   "variables": {
+    "templateAPIVersion": "2015-01-01",
+    "resourceAPIVersion": "2015-06-15",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
     "OSDiskName": "[concat(parameters('uniqueNamePrefix'),'Disk')]",
@@ -70,9 +105,40 @@
     "virtualNetworkName": "[concat(parameters('uniqueNamePrefix'),'VNet')]",
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
-    "apiVersion": "2015-06-15"
+    "apiVersion": "2015-06-15",
+    "virtualNetworkSetupURL": "[concat(parameters('artifactsPath'),'/vnet-',parameters('vnetNewOrExisting'),'.json')]"
+   
   },
   "resources": [
+    {
+            "name": "SettingUpVirtualNetwork",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "[variables('templateAPIVersion')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('virtualNetworkSetupURL')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "virtualNetworkName": {
+                        "value": "[parameters('virtualNetworkName')]"
+                    },
+                    "virtualNetworkAddressPrefix": {
+                        "value": "[parameters('vnetAddressPrefix')]"
+                    },
+                    "subnetName": {
+                        "value": "[parameters('subnetName')]"
+                    },
+                    "subnetPrefix": {
+                        "value": "[parameters('subnetPrefix')]"
+                    },
+                    "virtualNetworkExistingRGName": {
+                        "value": "[parameters('virtualNetworkExistingRGName')]"
+                    }
+                }
+            }
+        },
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Storage/storageAccounts",
@@ -94,27 +160,7 @@
         }
       }
     },
-    {
-      "apiVersion": "[variables('apiVersion')]",
-      "type": "Microsoft.Network/virtualNetworks",
-      "name": "[variables('virtualNetworkName')]",
-      "location": "[resourceGroup().location]",
-      "properties": {
-        "addressSpace": {
-          "addressPrefixes": [
-            "[variables('addressPrefix')]"
-          ]
-        },
-        "subnets": [
-          {
-            "name": "[variables('subnetName')]",
-            "properties": {
-              "addressPrefix": "[variables('subnetPrefix')]"
-            }
-          }
-        ]
-      }
-    },
+    
     {
       "apiVersion": "[variables('apiVersion')]",
       "type": "Microsoft.Network/networkInterfaces",
