@@ -8,19 +8,6 @@
             "description": "Unique name that will be used to generate various other names including the name of the Public IP used to access the Virtual Machine."
             }
         },  
-       
-        "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
-            "type": "String"
-        },
-        "disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
-            "type": "String"
-        },
-        "disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]",
-            "type": "String"
-        },
         "disks_primeconmcadnin_datadisk_name": {
             "defaultValue": "primeconmcadnin_datadisk",
             "type": "String"
@@ -31,34 +18,6 @@
         },
         "snapshots_primeconmc_OsDiskSnapshot_name": {
             "defaultValue": "primeconmc_OsDiskSnapshot",
-            "type": "String"
-        },
-        "virtualMachines_primeconapp0_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'app0')]",
-            "type": "String"
-        },
-        "virtualMachines_primeconapp1_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'app1')]",
-            "type": "String"
-        },
-        "virtualMachines_primecondb0_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'db0')]",
-            "type": "String"
-        },
-        "virtualMachines_primecondb1_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'db1')]",
-            "type": "String"
-        },
-        "virtualMachines_primeconmc1_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mc1')]",
-            "type": "String"
-        },
-        "virtualMachines_primeconmc2_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mc2')]",
-            "type": "String"
-        },
-        "virtualMachines_primeconmcadmin_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
             "type": "String"
         },
         "loadBalancers_primeconapplb_name": {
@@ -224,6 +183,16 @@
         "availabilitySets_primeconappset_name": "[concat(parameters('uniqueNamePrefix'),'appset')]",
         "availabilitySets_primecondb_set_name": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
         "availabilitySets_primeconmcset_name": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
+        "virtualMachines_primeconapp0_name": "[concat(parameters('uniqueNamePrefix'),'app0')]",
+        "virtualMachines_primeconapp1_name": "[concat(parameters('uniqueNamePrefix'),'app1')]",
+        "virtualMachines_primecondb0_name": "[concat(parameters('uniqueNamePrefix'),'db0')]",
+        "virtualMachines_primecondb1_name": "[concat(parameters('uniqueNamePrefix'),'db1')]",
+        "virtualMachines_primeconmc1_name": "[concat(parameters('uniqueNamePrefix'),'mc1')]",
+        "virtualMachines_primeconmc2_name": "[concat(parameters('uniqueNamePrefix'),'mc2')]",
+        "virtualMachines_primeconmcadmin_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
+        "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
+        "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
+        "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]"
             
     },
     "resources": [
@@ -315,7 +284,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318'.",
             "type": "Microsoft.Compute/disks",
-            "name": "[parameters('disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name')]",
+            "name": "[parameters('disks_primeconmc1_OsDisk_1_name')]",
             "apiVersion": "2016-04-30-preview",
             "location": "centralindia",
             "scale": null,
@@ -335,7 +304,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85'.",
             "type": "Microsoft.Compute/disks",
-            "name": "[parameters('disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name')]",
+            "name": "[parameters('disks_primeconmc2_OsDisk_1_name')]",
             "apiVersion": "2016-04-30-preview",
             "location": "centralindia",
             "scale": null,
@@ -355,7 +324,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2'.",
             "type": "Microsoft.Compute/disks",
-            "name": "[parameters('disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name')]",
+            "name": "[parameters('disks_primeconmcadmin_OsDisk_1_name')]",
             "apiVersion": "2016-04-30-preview",
             "location": "centralindia",
             "scale": null,
@@ -420,12 +389,12 @@
                 "osType": "Linux",
                 "creationData": {
                     "createOption": "Copy",
-                    "sourceUri": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name'))]"
+                    "sourceUri": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_name'))]"
                 },
                 "diskSizeGB": 30
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name'))]"
+                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_name'))]"
             ]
         },
         {
@@ -728,7 +697,7 @@
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name'))]"
+                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc1_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -758,7 +727,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_primeconmcset_name'))]",
-                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name'))]",
+                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc1_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc1572_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd295_name'))]"
             ]
@@ -791,7 +760,7 @@
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name'))]"
+                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc2_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -821,7 +790,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_primeconmcset_name'))]",
-                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name'))]",
+                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmc2_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc215_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd275_name'))]"
             ]
@@ -854,7 +823,7 @@
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name'))]"
+                            "id": "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -896,7 +865,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySets_primeconmcset_name'))]",
-                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name'))]",
+                "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadmin_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadnin_datadisk_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmcadmin348_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd893_name'))]"
