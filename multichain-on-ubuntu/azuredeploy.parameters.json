@@ -1,0 +1,174 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "uniqueNamePrefix": {
+            "value": "GEN-UNIQUE-8"
+        },
+        "availabilitySets_primeconappset_name": {
+            "value": null
+        },
+        "availabilitySets_primecondb_set_name": {
+            "value": null
+        },
+        "availabilitySets_primeconmcset_name": {
+            "value": null
+        },
+        "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
+            "value": null
+        },
+        "disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name": {
+            "value": null
+        },
+        "disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name": {
+            "value": null
+        },
+        "disks_primeconmcadnin_datadisk_name": {
+            "value": null
+        },
+        "disks_primeconmcnode2_OsDisk_name": {
+            "value": null
+        },
+        "snapshots_primeconmc_OsDiskSnapshot_name": {
+            "value": null
+        },
+        "virtualMachines_primeconapp0_name": {
+            "value": null
+        },
+        "virtualMachines_primeconapp1_name": {
+            "value": null
+        },
+        "virtualMachines_primecondb0_name": {
+            "value": null
+        },
+        "virtualMachines_primecondb1_name": {
+            "value": null
+        },
+        "virtualMachines_primeconmc1_name": {
+            "value": null
+        },
+        "virtualMachines_primeconmc2_name": {
+            "value": null
+        },
+        "virtualMachines_primeconmcadmin_name": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_name": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_name": {
+            "value": null
+        },
+        "networkInterfaces_primeconapp0973_name": {
+            "value": null
+        },
+        "networkInterfaces_primeconapp1767_name": {
+            "value": null
+        },
+        "networkInterfaces_primecondb_nic0_name": {
+            "value": null
+        },
+        "networkInterfaces_primecondb_nic1_name": {
+            "value": null
+        },
+        "networkInterfaces_primeconmc1572_name": {
+            "value": null
+        },
+        "networkInterfaces_primeconmc215_name": {
+            "value": null
+        },
+        "networkInterfaces_primeconmcadmin348_name": {
+            "value": null
+        },
+        "networkSecurityGroups_primeconapp0_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_primeconapp1_nsg_name": {
+            "value": null
+        },
+        "networkSecurityGroups_primeconmcadmin_nsg_name": {
+            "value": null
+        },
+        "publicIPAddresses_primeconmc1_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_primeconmc2_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_primeconmcadmin_ip_name": {
+            "value": null
+        },
+        "publicIPAddresses_primeconpip_name": {
+            "value": null
+        },
+        "publicIPAddresses_primecontractdbpip_name": {
+            "value": null
+        },
+        "virtualNetworks_primecontractvnet_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd178_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd275_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd289_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd295_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd357_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd440_name": {
+            "value": null
+        },
+        "storageAccounts_primechaincontractprd893_name": {
+            "value": null
+        },
+        "storageAccounts_qfgcyuomaroagstorage_name": {
+            "value": null
+        },
+        "extensions_setupMySQL_name": {
+            "value": null
+        },
+        "extensions_setupMySQL_name_1": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_id": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_id_1": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_id_2": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_id_3": {
+            "value": null
+        },
+        "loadBalancers_primeconapplb_id_4": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id_1": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id_2": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id_3": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id_4": {
+            "value": null
+        },
+        "loadBalancers_primecondb_lb_id_5": {
+            "value": null
+        }
+    }
+}
