@@ -220,7 +220,18 @@
             },
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          }
+          },
+          "dataDisks": [
+              {
+                "name": "datadisk1",
+                "diskSizeGB": "1000",
+                "lun": 0,
+                "vhd": {
+                  "uri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), variables('resourceAPIVersion')).primaryEndpoints.blob, 'vhds/', parameters('dnsName'), copyIndex(), 'dataDisk1.vhd')]"
+                },
+                "createOption": "Empty"
+              }
+          ]
         },
         "networkProfile": {
           "networkInterfaces": [

@@ -5,15 +5,6 @@
         "uniqueNamePrefix": {
             "value": "GEN-UNIQUE-8"
         },
-        "availabilitySets_primeconappset_name": {
-            "value": null
-        },
-        "availabilitySets_primecondb_set_name": {
-            "value": null
-        },
-        "availabilitySets_primeconmcset_name": {
-            "value": null
-        },
         "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
             "value": null
         },
