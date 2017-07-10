@@ -8,18 +8,7 @@
             "description": "Unique name that will be used to generate various other names including the name of the Public IP used to access the Virtual Machine."
             }
         },  
-        "availabilitySets_primeconappset_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'appset')]",
-            "type": "String"
-        },
-        "availabilitySets_primecondb_set_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
-            "type": "String"
-        },
-        "availabilitySets_primeconmcset_name": {
-            "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
-            "type": "String"
-        },
+       
         "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
             "defaultValue": "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
             "type": "String"
@@ -229,7 +218,14 @@
             "type": "String"
         }
     },
-    "variables": {},
+    "variables": {
+        "templateAPIVersion": "2015-01-01",
+        "resourceAPIVersion": "2015-06-15",
+        "availabilitySets_primeconappset_name": "[concat(parameters('uniqueNamePrefix'),'appset')]",
+        "availabilitySets_primecondb_set_name": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
+        "availabilitySets_primeconmcset_name": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
+            
+    },
     "resources": [
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/availabilitySets/primeconappset'.",
