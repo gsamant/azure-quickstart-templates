@@ -56,18 +56,6 @@
             "defaultValue": "primeconmcadmin-ip",
             "type": "String"
         },
-        "publicIPAddresses_primeconpip_name": {
-            "defaultValue": "primeconpip",
-            "type": "String"
-        },
-        "publicIPAddresses_primecontractdbpip_name": {
-            "defaultValue": "primecontractdbpip",
-            "type": "String"
-        },
-        "virtualNetworks_primecontractvnet_name": {
-            "defaultValue": "primecontractvnet",
-            "type": "String"
-        },
         "extensions_setupMySQL_name": {
             "defaultValue": "primecondb0/setupMySQL",
             "type": "String"
@@ -80,6 +68,9 @@
     "variables": {
         "templateAPIVersion": "2015-01-01",
         "resourceAPIVersion": "2015-06-15",
+        "virtualNetworks_vnet_name": "[concat(parameters('uniqueNamePrefix'),'vnet')]",
+        "publicIPAddresses_primecon_app_pip_name": "[concat(parameters('uniqueNamePrefix'),'app_pip')]",
+        "publicIPAddresses_primecon_db_pip_name": "[concat(parameters('uniqueNamePrefix'),'db_pip')]",
         "storageAccounts_stracc1_name":"[concat(parameters('uniqueNamePrefix'),'stracc1')]",
         "storageAccounts_stracc2_name":"[concat(parameters('uniqueNamePrefix'),'stracc2')]",
         "storageAccounts_stracc3_name":"[concat(parameters('uniqueNamePrefix'),'stracc3')]",
@@ -789,7 +780,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconpip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primecon_app_pip_name'))]"
                             }
                         }
                     }
@@ -860,7 +851,7 @@
                 "inboundNatPools": []
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconpip_name'))]"
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primecon_app_pip_name'))]"
             ]
         },
         {
@@ -877,7 +868,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecontractdbpip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecon_db_pip_name'))]"
                             }
                         }
                     }
@@ -961,7 +952,7 @@
                 "inboundNatPools": []
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecontractdbpip_name'))]"
+                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecon_db_pip_name'))]"
             ]
         },
         {
@@ -979,7 +970,7 @@
                             "privateIPAddress": "10.0.0.4",
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/appsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/appsubnet')]"
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
@@ -1003,7 +994,7 @@
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
@@ -1023,7 +1014,7 @@
                             "privateIPAddress": "10.0.0.5",
                             "privateIPAllocationMethod": "Dynamic",
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/appsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/appsubnet')]"
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
@@ -1047,7 +1038,7 @@
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
@@ -1067,7 +1058,7 @@
                             "privateIPAddress": "10.0.1.4",
                             "privateIPAllocationMethod": "Static",
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/dbsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/dbsubnet')]"
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
@@ -1094,7 +1085,7 @@
                 "enableIPForwarding": false
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name'))]"
             ]
         },
@@ -1113,7 +1104,7 @@
                             "privateIPAddress": "10.0.1.5",
                             "privateIPAllocationMethod": "Static",
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/dbsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/dbsubnet')]"
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
@@ -1140,7 +1131,7 @@
                 "enableIPForwarding": false
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name'))]"
             ]
         },
@@ -1162,7 +1153,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc1_ip_name'))]"
                             },
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/mcsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
                             }
                         }
                     }
@@ -1177,7 +1168,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc1_ip_name'))]",
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
@@ -1199,7 +1190,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc2_ip_name'))]"
                             },
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/mcsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
                             }
                         }
                     }
@@ -1214,7 +1205,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc2_ip_name'))]",
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
@@ -1236,7 +1227,7 @@
                                 "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmcadmin_ip_name'))]"
                             },
                             "subnet": {
-                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name')), '/subnets/mcsubnet')]"
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
                             }
                         }
                     }
@@ -1251,7 +1242,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmcadmin_ip_name'))]",
-                "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
+                "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
@@ -1427,7 +1418,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primeconpip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primeconpip_name')]",
+            "name": "[variables('publicIPAddresses_primecon_app_pip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1435,7 +1426,7 @@
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "domainNameLabel": "primeconapp"
+                    "domainNameLabel": "[concat(parameters('uniqueNamePrefix'),'app')]"
                 }
             },
             "dependsOn": []
@@ -1443,7 +1434,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primecontractdbpip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primecontractdbpip_name')]",
+            "name": "[parameters('publicIPAddresses_primecon_db_pip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1451,7 +1442,7 @@
                 "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
                 "dnsSettings": {
-                    "domainNameLabel": "primecondb"
+                    "domainNameLabel": "[concat(parameters('uniqueNamePrefix'),'db')]"
                 }
             },
             "dependsOn": []
@@ -1459,7 +1450,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/virtualNetworks/primecontractvnet'.",
             "type": "Microsoft.Network/virtualNetworks",
-            "name": "[parameters('virtualNetworks_primecontractvnet_name')]",
+            "name": "[variables('virtualNetworks_vnet_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
