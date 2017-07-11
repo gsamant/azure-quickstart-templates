@@ -219,8 +219,6 @@
                 ]
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primeconapp0_name'))]",
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primeconapp1_name'))]"
             ]
         },
         {
@@ -245,10 +243,7 @@
                     }
                 ]
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primecondb0_name'))]",
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primecondb1_name'))]"
-            ]
+            "dependsOn": [ ]
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/availabilitySets/primeconmcset'.",
@@ -275,11 +270,7 @@
                     }
                 ]
             },
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primeconmc1_name'))]",
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primeconmc2_name'))]",
-                "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primeconmcadmin_name'))]"
-            ]
+            "dependsOn": []
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318'.",
@@ -452,7 +443,6 @@
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconappset_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd289_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconapp0973_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd178_name'))]"
