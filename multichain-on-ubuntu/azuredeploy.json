@@ -193,8 +193,8 @@
         "virtualMachines_primeconmcadmin_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
         "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
         "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
-        "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]"
-            
+        "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]",
+        "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))]"
     },
     "resources": [
         {
@@ -980,7 +980,7 @@
                         "name": "primecondbNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
+                                "id": "[concat(variables('loadBalancer_primecondb'),'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 64001,
                             "backendPort": 22,
@@ -991,7 +991,7 @@
                         "name": "primecondbNatRule1",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
+                                "id": "[concat(variables('loadBalancer_primecondb'),'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 64002,
                             "backendPort": 22,
@@ -1002,7 +1002,7 @@
                         "name": "primecondbMySQLNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
+                                "id": "[concat(variables('loadBalancer_primecondb'),'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 3306,
                             "backendPort": 3306,
@@ -1013,7 +1013,7 @@
                         "name": "primecondbMySQLNatRule1",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
+                                "id": "[concat(variables('loadBalancer_primecondb'),'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 3307,
                             "backendPort": 3306,
@@ -1024,7 +1024,7 @@
                         "name": "primecondbProbeNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
+                                "id": "[concat(variables('loadBalancer_primecondb'),'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 9200,
                             "backendPort": 9200,
