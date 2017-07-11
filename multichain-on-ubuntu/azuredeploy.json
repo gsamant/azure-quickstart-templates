@@ -20,14 +20,14 @@
             "defaultValue": "primeconmc_OsDiskSnapshot",
             "type": "String"
         },
-        "loadBalancers_primeconapplb_name": {
-            "defaultValue": "primeconapplb",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_name": {
-            "defaultValue": "primecondb-lb",
-            "type": "String"
-        },
+        // "loadBalancers_primeconapp_lb_name": {
+        //     "defaultValue": "primeconapplb",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_name": {
+        //     "defaultValue": "primecondb-lb",
+        //     "type": "String"
+        // },
         "networkInterfaces_primeconapp0973_name": {
             "defaultValue": "primeconapp0973",
             "type": "String"
@@ -131,27 +131,27 @@
         "extensions_setupMySQL_name_1": {
             "defaultValue": "primecondb1/setupMySQL",
             "type": "String"
-        },
-        "loadBalancers_primeconapplb_id": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-            "type": "String"
-        },
-        "loadBalancers_primeconapplb_id_1": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/backendAddressPools/primecomapppool",
-            "type": "String"
-        },
-        "loadBalancers_primeconapplb_id_2": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/probes/primeconhpb",
-            "type": "String"
-        },
-        "loadBalancers_primeconapplb_id_3": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-            "type": "String"
-        },
-        "loadBalancers_primeconapplb_id_4": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-            "type": "String"
-        }
+        // },
+        // "loadBalancers_primeconapplb_id": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primeconapplb_id_1": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/backendAddressPools/primecomapppool",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primeconapplb_id_2": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/probes/primeconhpb",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primeconapplb_id_3": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primeconapplb_id_4": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
+        //     "type": "String"
+        // }
         //,
         // "loadBalancers_primecondb_lb_id": {
         //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
@@ -176,11 +176,13 @@
         // "loadBalancers_primecondb_lb_id_5": {
         //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
         //     "type": "String"
-        // }
+        }
     },
     "variables": {
         "templateAPIVersion": "2015-01-01",
         "resourceAPIVersion": "2015-06-15",
+        "loadBalancers_primeconapp_lb_name": "primeconapplb",
+        "loadBalancers_primecondb_lb_name": "primecondblb",
         "availabilitySets_primeconappset_name": "[concat(parameters('uniqueNamePrefix'),'appset')]",
         "availabilitySets_primecondb_set_name": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
         "availabilitySets_primeconmcset_name": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
@@ -194,7 +196,8 @@
         "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
         "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
         "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]",
-        "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))]"
+        "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primecondb_lb_name'))]",
+        "loadBalancer_primeconapp": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primeconapp_lb_name'))]"
     },
     "resources": [
         {
@@ -864,7 +867,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb'.",
             "type": "Microsoft.Network/loadBalancers",
-            "name": "[parameters('loadBalancers_primeconapplb_name')]",
+            "name": "[variables('loadBalancers_primeconapp_lb_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -890,7 +893,7 @@
                         "name": "primeconlbrule",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primeconapplb_id')]"
+                                "id": "[concat(variables('loadBalancer_primeconapp'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]"
                             },
                             "frontendPort": 80,
                             "backendPort": 80,
@@ -899,10 +902,10 @@
                             "protocol": "Tcp",
                             "loadDistribution": "SourceIP",
                             "backendAddressPool": {
-                                "id": "[parameters('loadBalancers_primeconapplb_id_1')]"
+                                "id": "[concat(variables('loadBalancer_primeconapp'),'/backendAddressPools/primecomapppool')]"
                             },
                             "probe": {
-                                "id": "[parameters('loadBalancers_primeconapplb_id_2')]"
+                                "id": "[concat(variables('loadBalancer_primeconapp'),'/probes/primeconhpb')]"
                             }
                         }
                     }
@@ -923,7 +926,7 @@
                         "name": "primeconappNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primeconapplb_id_3')]"
+                                "id": "[concat(variables('loadBalancer_primeconapp'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]"
                             },
                             "frontendPort": 64001,
                             "backendPort": 22,
@@ -934,7 +937,7 @@
                         "name": "primeconappNatRule1",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primeconapplb_id_4')]"
+                                "id": "[concat(variables('loadBalancer_primeconapp'),'/frontendIPConfigurations/LoadBalancerFrontEnd')]"
                             },
                             "frontendPort": 64002,
                             "backendPort": 22,
@@ -952,7 +955,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb'.",
             "type": "Microsoft.Network/loadBalancers",
-            "name": "[parameters('loadBalancers_primecondb_lb_name')]",
+            "name": "[variables('loadBalancers_primecondb_lb_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1069,12 +1072,12 @@
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name')), '/backendAddressPools/primecomapppool')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name')), '/backendAddressPools/primecomapppool')]"
                                 }
                             ],
                             "loadBalancerInboundNatRules": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name')), '/inboundNatRules/primeconappNatRule0')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name')), '/inboundNatRules/primeconappNatRule0')]"
                                 }
                             ]
                         }
@@ -1090,7 +1093,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
-                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
         },
@@ -1113,12 +1116,12 @@
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name')), '/backendAddressPools/primecomapppool')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name')), '/backendAddressPools/primecomapppool')]"
                                 }
                             ],
                             "loadBalancerInboundNatRules": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name')), '/inboundNatRules/primeconappNatRule1')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name')), '/inboundNatRules/primeconappNatRule1')]"
                                 }
                             ]
                         }
@@ -1134,7 +1137,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
-                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primeconapplb_name'))]",
+                "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
                 "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
         },
@@ -1157,18 +1160,18 @@
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/backendAddressPools/primecondb-ilbBackendPool')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/backendAddressPools/primecondb-ilbBackendPool')]"
                                 }
                             ],
                             "loadBalancerInboundNatRules": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbNatRule0')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbNatRule0')]"
                                 },
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbProbeNatRule0')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbProbeNatRule0')]"
                                 },
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbMySQLNatRule0')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbMySQLNatRule0')]"
                                 }
                             ]
                         }
@@ -1181,7 +1184,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
-                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name'))]"
+                "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name'))]"
             ]
         },
         {
@@ -1203,18 +1206,18 @@
                             },
                             "loadBalancerBackendAddressPools": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/backendAddressPools/primecondb-ilbBackendPool')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/backendAddressPools/primecondb-ilbBackendPool')]"
                                 }
                             ],
                             "loadBalancerInboundNatRules": [
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbNatRule1')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbNatRule1')]"
                                 },
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbProbeNatRule1')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbProbeNatRule1')]"
                                 },
                                 {
-                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbMySQLNatRule1')]"
+                                    "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name')), '/inboundNatRules/primecondbMySQLNatRule1')]"
                                 }
                             ]
                         }
@@ -1227,7 +1230,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_primecontractvnet_name'))]",
-                "[resourceId('Microsoft.Network/loadBalancers', parameters('loadBalancers_primecondb_lb_name'))]"
+                "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primecondb_lb_name'))]"
             ]
         },
         {
