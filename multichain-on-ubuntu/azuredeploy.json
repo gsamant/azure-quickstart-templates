@@ -151,31 +151,32 @@
         "loadBalancers_primeconapplb_id_4": {
             "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
             "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id_1": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id_2": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id_3": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id_4": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
-        },
-        "loadBalancers_primecondb_lb_id_5": {
-            "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-            "type": "String"
         }
+        //,
+        // "loadBalancers_primecondb_lb_id": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_id_1": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_id_2": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_id_3": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_id_4": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // },
+        // "loadBalancers_primecondb_lb_id_5": {
+        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
+        //     "type": "String"
+        // }
     },
     "variables": {
         "templateAPIVersion": "2015-01-01",
@@ -218,8 +219,7 @@
                     }
                 ]
             },
-            "dependsOn": [
-            ]
+            "dependsOn": []
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/availabilitySets/primecondb-set'.",
@@ -980,7 +980,7 @@
                         "name": "primecondbNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primecondb_lb_id')]"
+                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 64001,
                             "backendPort": 22,
@@ -991,7 +991,7 @@
                         "name": "primecondbNatRule1",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primecondb_lb_id_1')]"
+                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 64002,
                             "backendPort": 22,
@@ -1002,7 +1002,7 @@
                         "name": "primecondbMySQLNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primecondb_lb_id_2')]"
+                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 3306,
                             "backendPort": 3306,
@@ -1013,7 +1013,7 @@
                         "name": "primecondbMySQLNatRule1",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primecondb_lb_id_3')]"
+                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 3307,
                             "backendPort": 3306,
@@ -1024,7 +1024,7 @@
                         "name": "primecondbProbeNatRule0",
                         "properties": {
                             "frontendIPConfiguration": {
-                                "id": "[parameters('loadBalancers_primecondb_lb_id_4')]"
+                                "id": "[concat([resourceId('Microsoft.Network/loadBalancers',parameters('loadBalancers_primecondb_lb_name'))],'/frontendIPConfigurations/primecondb-sshIPCfg')]"
                             },
                             "frontendPort": 9200,
                             "backendPort": 9200,
