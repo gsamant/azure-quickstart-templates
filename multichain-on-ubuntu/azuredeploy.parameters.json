@@ -23,42 +23,6 @@
         "snapshots_primeconmc_OsDiskSnapshot_name": {
             "value": null
         },
-        "networkInterfaces_primeconmc1572_name": {
-            "value": null
-        },
-        "networkInterfaces_primeconmc215_name": {
-            "value": null
-        },
-        "networkInterfaces_primeconmcadmin348_name": {
-            "value": null
-        },
-        "networkSecurityGroups_primeconapp0_nsg_name": {
-            "value": null
-        },
-        "networkSecurityGroups_primeconapp1_nsg_name": {
-            "value": null
-        },
-        "networkSecurityGroups_primeconmcadmin_nsg_name": {
-            "value": null
-        },
-        "publicIPAddresses_primeconmc1_ip_name": {
-            "value": null
-        },
-        "publicIPAddresses_primeconmc2_ip_name": {
-            "value": null
-        },
-        "publicIPAddresses_primeconmcadmin_ip_name": {
-            "value": null
-        },
-        "publicIPAddresses_primeconpip_name": {
-            "value": null
-        },
-        "publicIPAddresses_primecontractdbpip_name": {
-            "value": null
-        },
-        "virtualNetworks_primecontractvnet_name": {
-            "value": null
-        },
         "extensions_setupMySQL_name": {
             "value": null
         },

@@ -20,42 +20,6 @@
             "defaultValue": "primeconmc_OsDiskSnapshot",
             "type": "String"
         },
-        "networkInterfaces_primeconmc1572_name": {
-            "defaultValue": "primeconmc1572",
-            "type": "String"
-        },
-        "networkInterfaces_primeconmc215_name": {
-            "defaultValue": "primeconmc215",
-            "type": "String"
-        },
-        "networkInterfaces_primeconmcadmin348_name": {
-            "defaultValue": "primeconmcadmin348",
-            "type": "String"
-        },
-        "networkSecurityGroups_primeconapp0_nsg_name": {
-            "defaultValue": "primeconapp0-nsg",
-            "type": "String"
-        },
-        "networkSecurityGroups_primeconapp1_nsg_name": {
-            "defaultValue": "primeconapp1-nsg",
-            "type": "String"
-        },
-        "networkSecurityGroups_primeconmcadmin_nsg_name": {
-            "defaultValue": "primeconmcadmin-nsg",
-            "type": "String"
-        },
-        "publicIPAddresses_primeconmc1_ip_name": {
-            "defaultValue": "primeconmc1-ip",
-            "type": "String"
-        },
-        "publicIPAddresses_primeconmc2_ip_name": {
-            "defaultValue": "primeconmc2-ip",
-            "type": "String"
-        },
-        "publicIPAddresses_primeconmcadmin_ip_name": {
-            "defaultValue": "primeconmcadmin-ip",
-            "type": "String"
-        },
         "extensions_setupMySQL_name": {
             "defaultValue": "primecondb0/setupMySQL",
             "type": "String"
@@ -71,6 +35,9 @@
         "virtualNetworks_vnet_name": "[concat(parameters('uniqueNamePrefix'),'vnet')]",
         "publicIPAddresses_primecon_app_pip_name": "[concat(parameters('uniqueNamePrefix'),'app_pip')]",
         "publicIPAddresses_primecon_db_pip_name": "[concat(parameters('uniqueNamePrefix'),'db_pip')]",
+        "publicIPAddresses_primeconmcadmin_ip_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_pip')]",
+        "publicIPAddresses_primeconmc1_ip_name": "[concat(parameters('uniqueNamePrefix'),'mc1_pip')]",
+        "publicIPAddresses_primeconmc2_ip_name": "[concat(parameters('uniqueNamePrefix'),'mc2_pip')]",
         "storageAccounts_stracc1_name":"[concat(parameters('uniqueNamePrefix'),'stracc1')]",
         "storageAccounts_stracc2_name":"[concat(parameters('uniqueNamePrefix'),'stracc2')]",
         "storageAccounts_stracc3_name":"[concat(parameters('uniqueNamePrefix'),'stracc3')]",
@@ -85,6 +52,12 @@
         "networkInterfaces_primecondb_nic1_name": "[concat(parameters('uniqueNamePrefix'),'db-nic1')]",
         "networkInterfaces_primeconapp_nic0_name": "[concat(parameters('uniqueNamePrefix'),'app-nic0')]",
         "networkInterfaces_primeconapp_nic1_name": "[concat(parameters('uniqueNamePrefix'),'app-nic1')]",
+        "networkInterfaces_primeconmc_nic1_name": "[concat(parameters('uniqueNamePrefix'),'mc-nic1')]",
+        "networkInterfaces_primeconmc_nic2_name": "[concat(parameters('uniqueNamePrefix'),'mc-nic2')]",
+        "networkInterfaces_primeconmcadmin_nic_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin-nic')]",
+        "networkSecurityGroups_primeconapp0_nsg_name": "[concat(parameters('uniqueNamePrefix'),'app0-nsg')]",
+        "networkSecurityGroups_primeconapp1_nsg_name": "[concat(parameters('uniqueNamePrefix'),'app1-nsg')]",
+        "networkSecurityGroups_primeconmcadmin_nsg_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin-nsg')]",
         "availabilitySets_primeconappset_name": "[concat(parameters('uniqueNamePrefix'),'appset')]",
         "availabilitySets_primecondb_set_name": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
         "availabilitySets_primeconmcset_name": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
@@ -609,7 +582,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc1572_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic1_name'))]"
                         }
                     ]
                 },
@@ -623,7 +596,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc1572_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic1_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc4_name'))]"
             ]
         },
@@ -672,7 +645,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc215_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic2_name'))]"
                         }
                     ]
                 },
@@ -686,7 +659,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc215_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic2_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc2_name'))]"
             ]
         },
@@ -747,7 +720,7 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmcadmin348_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmcadmin_nic_name'))]"
                         }
                     ]
                 },
@@ -762,7 +735,7 @@
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadnin_datadisk_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmcadmin348_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmcadmin_nic_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc7_name'))]"
             ]
         },
@@ -868,7 +841,7 @@
                         "properties": {
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecon_db_pip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primecon_db_pip_name'))]"
                             }
                         }
                     }
@@ -952,7 +925,7 @@
                 "inboundNatPools": []
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primecon_db_pip_name'))]"
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primecon_db_pip_name'))]"
             ]
         },
         {
@@ -990,13 +963,13 @@
                 },
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconapp0_nsg_name'))]"
                 }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
         },
         {
@@ -1034,13 +1007,13 @@
                 },
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconapp0_nsg_name'))]"
                 }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
                 "[resourceId('Microsoft.Network/loadBalancers', variables('loadBalancers_primeconapp_lb_name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconapp0_nsg_name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconapp0_nsg_name'))]"
             ]
         },
         {
@@ -1138,7 +1111,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primeconmc1572'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primeconmc1572_name')]",
+            "name": "[variables('networkInterfaces_primeconmc_nic1_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1150,7 +1123,7 @@
                             "privateIPAddress": "10.0.2.5",
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc1_ip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmc1_ip_name'))]"
                             },
                             "subnet": {
                                 "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
@@ -1163,19 +1136,19 @@
                 },
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc1_ip_name'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmc1_ip_name'))]",
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primeconmc215'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primeconmc215_name')]",
+            "name": "[variables('networkInterfaces_primeconmc_nic2_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1187,7 +1160,7 @@
                             "privateIPAddress": "10.0.2.6",
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc2_ip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmc2_ip_name'))]"
                             },
                             "subnet": {
                                 "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
@@ -1200,19 +1173,19 @@
                 },
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmc2_ip_name'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmc2_ip_name'))]",
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primeconmcadmin348'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primeconmcadmin348_name')]",
+            "name": "[variables('networkInterfaces_primeconmcadmin_nic_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1224,7 +1197,7 @@
                             "privateIPAddress": "10.0.2.4",
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIPAddress": {
-                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmcadmin_ip_name'))]"
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmcadmin_ip_name'))]"
                             },
                             "subnet": {
                                 "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name')), '/subnets/mcsubnet')]"
@@ -1237,19 +1210,19 @@
                 },
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
-                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIPAddresses_primeconmcadmin_ip_name'))]",
+                "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPAddresses_primeconmcadmin_ip_name'))]",
                 "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworks_vnet_name'))]",
-                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroups_primeconmcadmin_nsg_name'))]"
             ]
         },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkSecurityGroups/primeconapp0-nsg'.",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "[parameters('networkSecurityGroups_primeconapp0_nsg_name')]",
+            "name": "[variables('networkSecurityGroups_primeconapp0_nsg_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1288,7 +1261,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkSecurityGroups/primeconapp1-nsg'.",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "[parameters('networkSecurityGroups_primeconapp1_nsg_name')]",
+            "name": "[variables('networkSecurityGroups_primeconapp1_nsg_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1314,7 +1287,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkSecurityGroups/primeconmcadmin-nsg'.",
             "type": "Microsoft.Network/networkSecurityGroups",
-            "name": "[parameters('networkSecurityGroups_primeconmcadmin_nsg_name')]",
+            "name": "[variables('networkSecurityGroups_primeconmcadmin_nsg_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1379,7 +1352,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primeconmc1-ip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primeconmc1_ip_name')]",
+            "name": "[variables('publicIPAddresses_primeconmc1_ip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1392,7 +1365,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primeconmc2-ip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primeconmc2_ip_name')]",
+            "name": "[variables('publicIPAddresses_primeconmc2_ip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1405,7 +1378,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primeconmcadmin-ip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primeconmcadmin_ip_name')]",
+            "name": "[variables('publicIPAddresses_primeconmcadmin_ip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1434,7 +1407,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/publicIPAddresses/primecontractdbpip'.",
             "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[parameters('publicIPAddresses_primecon_db_pip_name')]",
+            "name": "[variables('publicIPAddresses_primecon_db_pip_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
