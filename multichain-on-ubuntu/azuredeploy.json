@@ -20,30 +20,6 @@
             "defaultValue": "primeconmc_OsDiskSnapshot",
             "type": "String"
         },
-        // "loadBalancers_primeconapp_lb_name": {
-        //     "defaultValue": "primeconapplb",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_name": {
-        //     "defaultValue": "primecondb-lb",
-        //     "type": "String"
-        // },
-        "networkInterfaces_primeconapp0973_name": {
-            "defaultValue": "primeconapp0973",
-            "type": "String"
-        },
-        "networkInterfaces_primeconapp1767_name": {
-            "defaultValue": "primeconapp1767",
-            "type": "String"
-        },
-        "networkInterfaces_primecondb_nic0_name": {
-            "defaultValue": "primecondb-nic0",
-            "type": "String"
-        },
-        "networkInterfaces_primecondb_nic1_name": {
-            "defaultValue": "primecondb-nic1",
-            "type": "String"
-        },
         "networkInterfaces_primeconmc1572_name": {
             "defaultValue": "primeconmc1572",
             "type": "String"
@@ -92,38 +68,6 @@
             "defaultValue": "primecontractvnet",
             "type": "String"
         },
-        "storageAccounts_primechaincontractprd178_name": {
-            "defaultValue": "primechaincontractprd178",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd275_name": {
-            "defaultValue": "primechaincontractprd275",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd289_name": {
-            "defaultValue": "primechaincontractprd289",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd295_name": {
-            "defaultValue": "primechaincontractprd295",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd357_name": {
-            "defaultValue": "primechaincontractprd357",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd440_name": {
-            "defaultValue": "primechaincontractprd440",
-            "type": "String"
-        },
-        "storageAccounts_primechaincontractprd893_name": {
-            "defaultValue": "primechaincontractprd893",
-            "type": "String"
-        },
-        "storageAccounts_qfgcyuomaroagstorage_name": {
-            "defaultValue": "qfgcyuomaroagstorage",
-            "type": "String"
-        },
         "extensions_setupMySQL_name": {
             "defaultValue": "primecondb0/setupMySQL",
             "type": "String"
@@ -131,58 +75,25 @@
         "extensions_setupMySQL_name_1": {
             "defaultValue": "primecondb1/setupMySQL",
             "type": "String"
-        // },
-        // "loadBalancers_primeconapplb_id": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primeconapplb_id_1": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/backendAddressPools/primecomapppool",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primeconapplb_id_2": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/probes/primeconhpb",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primeconapplb_id_3": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primeconapplb_id_4": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb/frontendIPConfigurations/LoadBalancerFrontEnd",
-        //     "type": "String"
-        // }
-        //,
-        // "loadBalancers_primecondb_lb_id": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_id_1": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_id_2": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_id_3": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_id_4": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
-        // },
-        // "loadBalancers_primecondb_lb_id_5": {
-        //     "defaultValue": "/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primecondb-lb/frontendIPConfigurations/primecondb-sshIPCfg",
-        //     "type": "String"
         }
     },
     "variables": {
         "templateAPIVersion": "2015-01-01",
         "resourceAPIVersion": "2015-06-15",
-        "loadBalancers_primeconapp_lb_name": "primeconapplb",
-        "loadBalancers_primecondb_lb_name": "primecondblb",
+        "storageAccounts_stracc1_name":"[concat(parameters('uniqueNamePrefix'),'stracc1')]",
+        "storageAccounts_stracc2_name":"[concat(parameters('uniqueNamePrefix'),'stracc2')]",
+        "storageAccounts_stracc3_name":"[concat(parameters('uniqueNamePrefix'),'stracc3')]",
+        "storageAccounts_stracc4_name":"[concat(parameters('uniqueNamePrefix'),'stracc4')]",
+        "storageAccounts_stracc5_name":"[concat(parameters('uniqueNamePrefix'),'stracc5')]",
+        "storageAccounts_stracc6_name":"[concat(parameters('uniqueNamePrefix'),'stracc6')]",
+        "storageAccounts_stracc7_name":"[concat(parameters('uniqueNamePrefix'),'stracc7')]",
+        "storageAccounts_stracc8_name":"[concat(parameters('uniqueNamePrefix'),'stracc8')]",
+        "loadBalancers_primeconapp_lb_name": "[concat(parameters('uniqueNamePrefix'),'applb')]",
+        "loadBalancers_primecondb_lb_name": "[concat(parameters('uniqueNamePrefix'),'dblb')]",
+        "networkInterfaces_primecondb_nic0_name":"[concat(parameters('uniqueNamePrefix'),'db-nic0')]",
+        "networkInterfaces_primecondb_nic1_name": "[concat(parameters('uniqueNamePrefix'),'db-nic1')]",
+        "networkInterfaces_primeconapp_nic0_name": "[concat(parameters('uniqueNamePrefix'),'app-nic0')]",
+        "networkInterfaces_primeconapp_nic1_name": "[concat(parameters('uniqueNamePrefix'),'app-nic1')]",
         "availabilitySets_primeconappset_name": "[concat(parameters('uniqueNamePrefix'),'appset')]",
         "availabilitySets_primecondb_set_name": "[concat(parameters('uniqueNamePrefix'),'dbset')]",
         "availabilitySets_primeconmcset_name": "[concat(parameters('uniqueNamePrefix'),'mcset')]",
@@ -417,7 +328,7 @@
                         "name": "[variables('virtualMachines_primeconapp0_name')]",
                         "createOption": "FromImage",
                         "vhd": {
-                            "uri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd289_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primeconapp0_name'),'20170621152922.vhd'))]"
+                            "uri": "[concat('https', '://', variables('storageAccounts_stracc3_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primeconapp0_name'),'20170621152922.vhd'))]"
                         },
                         "caching": "ReadWrite"
                     },
@@ -434,21 +345,21 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconapp0973_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconapp_nic0_name'))]"
                         }
                     ]
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd178_name'), '.blob.core.windows.net', '/')]"
+                        "storageUri": "[concat('https', '://', variables('storageAccounts_stracc1_name'), '.blob.core.windows.net', '/')]"
                     }
                 }
             },
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd289_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconapp0973_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd178_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc3_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconapp_nic0_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc1_name'))]"
             ]
         },
         {
@@ -477,7 +388,7 @@
                         "name": "[variables('virtualMachines_primeconapp1_name')]",
                         "createOption": "FromImage",
                         "vhd": {
-                            "uri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd440_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primeconapp1_name'),'20170621161335.vhd'))]"
+                            "uri": "[concat('https', '://', variables('storageAccounts_stracc6_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primeconapp1_name'),'20170621161335.vhd'))]"
                         },
                         "caching": "ReadWrite"
                     },
@@ -494,22 +405,22 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconapp1767_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconapp_nic1_name'))]"
                         }
                     ]
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd357_name'), '.blob.core.windows.net', '/')]"
+                        "storageUri": "[concat('https', '://', variables('storageAccounts_stracc5_name'), '.blob.core.windows.net', '/')]"
                     }
                 }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconappset_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd440_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconapp1767_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd357_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc6_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconapp_nic1_name'))]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc5_name'))]"
             ]
         },
         {
@@ -538,7 +449,7 @@
                         "name": "osdisk",
                         "createOption": "FromImage",
                         "vhd": {
-                            "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'osdisk.vhd'))]"
+                            "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'osdisk.vhd'))]"
                         },
                         "caching": "ReadWrite"
                     },
@@ -548,7 +459,7 @@
                             "name": "datadisk1",
                             "createOption": "Empty",
                             "vhd": {
-                                "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'dataDisk1.vhd'))]"
+                                "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'dataDisk1.vhd'))]"
                             },
                             "caching": "None",
                             "diskSizeGB": 1000
@@ -558,7 +469,7 @@
                             "name": "datadisk2",
                             "createOption": "Empty",
                             "vhd": {
-                                "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'dataDisk2.vhd'))]"
+                                "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb0_name'),'dataDisk2.vhd'))]"
                             },
                             "caching": "None",
                             "diskSizeGB": 1000
@@ -576,15 +487,15 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primecondb_nic0_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primecondb_nic0_name'))]"
                         }
                     ]
                 }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primecondb_set_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_qfgcyuomaroagstorage_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primecondb_nic0_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc8_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primecondb_nic0_name'))]"
             ]
         },
         {
@@ -613,7 +524,7 @@
                         "name": "osdisk",
                         "createOption": "FromImage",
                         "vhd": {
-                            "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'osdisk.vhd'))]"
+                            "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'osdisk.vhd'))]"
                         },
                         "caching": "ReadWrite"
                     },
@@ -623,7 +534,7 @@
                             "name": "datadisk1",
                             "createOption": "Empty",
                             "vhd": {
-                                "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'dataDisk1.vhd'))]"
+                                "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'dataDisk1.vhd'))]"
                             },
                             "caching": "None",
                             "diskSizeGB": 1000
@@ -633,7 +544,7 @@
                             "name": "datadisk2",
                             "createOption": "Empty",
                             "vhd": {
-                                "uri": "[concat('https', '://', parameters('storageAccounts_qfgcyuomaroagstorage_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'dataDisk2.vhd'))]"
+                                "uri": "[concat('https', '://', variables('storageAccounts_stracc8_name'), '.blob.core.windows.net', concat('/vhds/', variables('virtualMachines_primecondb1_name'),'dataDisk2.vhd'))]"
                             },
                             "caching": "None",
                             "diskSizeGB": 1000
@@ -651,15 +562,15 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primecondb_nic1_name'))]"
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primecondb_nic1_name'))]"
                         }
                     ]
                 }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primecondb_set_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_qfgcyuomaroagstorage_name'))]",
-                "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primecondb_nic1_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc8_name'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primecondb_nic1_name'))]"
             ]
         },
         {
@@ -714,7 +625,7 @@
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd295_name'), '.blob.core.windows.net', '/')]"
+                        "storageUri": "[concat('https', '://', variables('storageAccounts_stracc4_name'), '.blob.core.windows.net', '/')]"
                     }
                 }
             },
@@ -722,7 +633,7 @@
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc1572_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd295_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc4_name'))]"
             ]
         },
         {
@@ -777,7 +688,7 @@
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd275_name'), '.blob.core.windows.net', '/')]"
+                        "storageUri": "[concat('https', '://', variables('storageAccounts_stracc2_name'), '.blob.core.windows.net', '/')]"
                     }
                 }
             },
@@ -785,7 +696,7 @@
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmc215_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd275_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc2_name'))]"
             ]
         },
         {
@@ -852,7 +763,7 @@
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https', '://', parameters('storageAccounts_primechaincontractprd893_name'), '.blob.core.windows.net', '/')]"
+                        "storageUri": "[concat('https', '://', variables('storageAccounts_stracc7_name'), '.blob.core.windows.net', '/')]"
                     }
                 }
             },
@@ -861,7 +772,7 @@
                 "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadnin_datadisk_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_primeconmcadmin348_name'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_primechaincontractprd893_name'))]"
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc7_name'))]"
             ]
         },
         {
@@ -1056,7 +967,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primeconapp0973'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primeconapp0973_name')]",
+            "name": "[variables('networkInterfaces_primeconapp_nic0_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1100,7 +1011,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primeconapp1767'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primeconapp1767_name')]",
+            "name": "[variables('networkInterfaces_primeconapp_nic1_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1144,7 +1055,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primecondb-nic0'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primecondb_nic0_name')]",
+            "name": "[variables('networkInterfaces_primecondb_nic0_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1190,7 +1101,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/networkInterfaces/primecondb-nic1'.",
             "type": "Microsoft.Network/networkInterfaces",
-            "name": "[parameters('networkInterfaces_primecondb_nic1_name')]",
+            "name": "[variables('networkInterfaces_primecondb_nic1_name')]",
             "apiVersion": "2017-03-01",
             "location": "centralindia",
             "scale": null,
@@ -1590,7 +1501,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd178_name')]",
+            "name": "[variables('storageAccounts_stracc1_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1606,7 +1517,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd275_name')]",
+            "name": "[variables('storageAccounts_stracc2_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1622,7 +1533,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd289_name')]",
+            "name": "[variables('storageAccounts_stracc3_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1638,7 +1549,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd295_name')]",
+            "name": "[variables('storageAccounts_stracc4_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1654,7 +1565,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd357_name')]",
+            "name": "[variables('storageAccounts_stracc5_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1670,7 +1581,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd440_name')]",
+            "name": "[variables('storageAccounts_stracc6_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1686,7 +1597,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_primechaincontractprd893_name')]",
+            "name": "[variables('storageAccounts_stracc7_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
@@ -1702,7 +1613,7 @@
                 "tier": "Standard"
             },
             "kind": "Storage",
-            "name": "[parameters('storageAccounts_qfgcyuomaroagstorage_name')]",
+            "name": "[variables('storageAccounts_stracc8_name')]",
             "apiVersion": "2016-01-01",
             "location": "centralindia",
             "tags": {},
