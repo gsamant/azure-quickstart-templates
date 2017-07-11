@@ -10,6 +10,7 @@
         },  
         "webAppUsername": {
             "type": "string",
+            "defaultValue": "pcwebappuser",
             "metadata": {
             "description": "VM User name for App Servers"
             }
@@ -22,11 +23,25 @@
         },
         "mySqlUsername": {
             "type": "string",
+            "defaultValue": "pcmysqluser",
             "metadata": {
             "description": "VM User name for DB Servers"
             }
         }, 
         "mySqlPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "password to ssh to the VMs"
+            }
+        }, 
+         "mcNodeUsername": {
+            "type": "string",
+            "defaultValue": "pcmcuser",
+            "metadata": {
+            "description": "VM User name for DB Servers"
+            }
+        }, 
+        "mcNodePassword": {
             "type": "securestring",
             "metadata": {
                 "description": "password to ssh to the VMs"
