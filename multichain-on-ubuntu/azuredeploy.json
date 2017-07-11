@@ -601,7 +601,8 @@
                 },
                 "osProfile": {
                     "computerName": "[variables('virtualMachines_primeconmc1_name')]",
-                    "adminUsername": "pcmcnode1admin",
+                    "adminUsername": "[parameters('mcNodeUsername')]",
+                    "adminPassword": "[parameters('mcNodePassword')]",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": false
                     },
@@ -664,7 +665,8 @@
                 },
                 "osProfile": {
                     "computerName": "[variables('virtualMachines_primeconmc2_name')]",
-                    "adminUsername": "pcmcnode2admin",
+                    "adminUsername": "[parameters('mcNodeUsername')]",
+                    "adminPassword": "[parameters('mcNodePassword')]",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": false
                     },
@@ -739,7 +741,8 @@
                 },
                 "osProfile": {
                     "computerName": "[variables('virtualMachines_primeconmcadmin_name')]",
-                    "adminUsername": "pcmcadmin",
+                    "adminUsername": "[parameters('mcNodeUsername')]",
+                    "adminPassword": "[parameters('mcNodePassword')]",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": false
                     },

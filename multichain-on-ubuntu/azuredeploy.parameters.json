@@ -17,6 +17,12 @@
         "mySqlPassword": {
             "value": "GEN-PASSWORD"
         },
+        "mcNodeUsername": {
+            "value": "pcmcuser"
+        },
+        "mcNodePassword": {
+            "value": "GEN-PASSWORD"
+        },
         "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
             "value": null
         },
