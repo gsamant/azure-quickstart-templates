@@ -189,46 +189,46 @@
             },
             "dependsOn": []
         },
-        {
-            "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318'.",
-            "type": "Microsoft.Compute/disks",
-            "name": "[variables('disks_primeconmc1_OsDisk_1_name')]",
-            "apiVersion": "2016-04-30-preview",
-            "location": "centralindia",
-            "scale": null,
-            "properties": {
-                "accountType": "Premium_LRS",
-                "osType": "Linux",
-                "creationData": {
-                    "createOption": "FromImage",
-                    "imageReference": {
-                        "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
-                    }
-                },
-                "diskSizeGB": 30
-            },
-            "dependsOn": []
-        },
-        {
-            "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85'.",
-            "type": "Microsoft.Compute/disks",
-            "name": "[variables('disks_primeconmc2_OsDisk_1_name')]",
-            "apiVersion": "2016-04-30-preview",
-            "location": "centralindia",
-            "scale": null,
-            "properties": {
-                "accountType": "Premium_LRS",
-                "osType": "Linux",
-                "creationData": {
-                    "createOption": "FromImage",
-                    "imageReference": {
-                        "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
-                    }
-                },
-                "diskSizeGB": 30
-            },
-            "dependsOn": []
-        },
+        // {
+        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318'.",
+        //     "type": "Microsoft.Compute/disks",
+        //     "name": "[variables('disks_primeconmc1_OsDisk_1_name')]",
+        //     "apiVersion": "2016-04-30-preview",
+        //     "location": "centralindia",
+        //     "scale": null,
+        //     "properties": {
+        //         "accountType": "Premium_LRS",
+        //         "osType": "Linux",
+        //         "creationData": {
+        //             "createOption": "FromImage",
+        //             "imageReference": {
+        //                 "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
+        //             }
+        //         },
+        //         "diskSizeGB": 30
+        //     },
+        //     "dependsOn": []
+        // },
+        // {
+        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85'.",
+        //     "type": "Microsoft.Compute/disks",
+        //     "name": "[variables('disks_primeconmc2_OsDisk_1_name')]",
+        //     "apiVersion": "2016-04-30-preview",
+        //     "location": "centralindia",
+        //     "scale": null,
+        //     "properties": {
+        //         "accountType": "Premium_LRS",
+        //         "osType": "Linux",
+        //         "creationData": {
+        //             "createOption": "FromImage",
+        //             "imageReference": {
+        //                 "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
+        //             }
+        //         },
+        //         "diskSizeGB": 30
+        //     },
+        //     "dependsOn": []
+        // },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2'.",
             "type": "Microsoft.Compute/disks",
