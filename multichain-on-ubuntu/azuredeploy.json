@@ -603,12 +603,12 @@
                     },
                     "osDisk": {
                         "osType": "Linux",
-                        "name": "[concat(variables('virtualMachines_primeconmc1_name'),'_OsDisk_1_d12e78f215c84ca68519865eed109318')]",
+                        "name": "[concat(variables('virtualMachines_primeconmc1_name'),'_OsDisk_1')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]"
+                            // "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -672,7 +672,7 @@
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]"
+                            // "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -736,7 +736,7 @@
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS",
-                            "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]"
+                            // "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
