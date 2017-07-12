@@ -107,8 +107,8 @@
         "virtualMachines_primeconmc1_name": "[concat(parameters('uniqueNamePrefix'),'mc1')]",
         "virtualMachines_primeconmc2_name": "[concat(parameters('uniqueNamePrefix'),'mc2')]",
         "virtualMachines_primeconmcadmin_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
-        "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
-        "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
+        // "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
+        // "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
         "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]",
         "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primecondb_lb_name'))]",
         "loadBalancer_primeconapp": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primeconapp_lb_name'))]"
@@ -639,7 +639,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
-                "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]",
+                // "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic1_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc4_name'))]"
             ]
@@ -703,7 +703,7 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
-                "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]",
+                // "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic2_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc2_name'))]"
             ]
