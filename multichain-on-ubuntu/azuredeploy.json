@@ -34,7 +34,25 @@
                 "description": "password to ssh to the VMs"
             }
         }, 
-         "mcNodeUsername": {
+        "mysqlReplicationPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "mysqlReplicationPassword"
+            }
+        }, 
+        "mysqlRootPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "mysqlRootPassword"
+            }
+        }, 
+        "mysqlProbePassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "mysqlProbePassword"
+            }
+        }, 
+        "mcNodeUsername": {
             "type": "string",
             "defaultValue": "pcmcuser",
             "metadata": {
@@ -47,16 +65,23 @@
                 "description": "password to ssh to the VMs"
             }
         }, 
+        "artifactsPath": {
+            "type": "string",
+            "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mysql-replication",
+            "metadata": {
+                "description": "template and script file location",
+                "artifactsBaseUrl": "Base URL of the Publisher Template gallery package"
+            }
+        },
+        "customScriptCommandToExecute": {
+            "type": "string",
+            "defaultValue": "bash azuremysql.sh",
+            "metadata": {
+                "description": "bash script command line"
+            }
+        },
         "disks_primeconmcadnin_datadisk_name": {
             "defaultValue": "primeconmcadnin_datadisk",
-            "type": "String"
-        },
-        "extensions_setupMySQL_name": {
-            "defaultValue": "primecondb0/setupMySQL",
-            "type": "String"
-        },
-        "extensions_setupMySQL_name_1": {
-            "defaultValue": "primecondb1/setupMySQL",
             "type": "String"
         }
     },
@@ -99,6 +124,15 @@
         "virtualMachines_primeconmc1_name": "[concat(parameters('uniqueNamePrefix'),'mc1')]",
         "virtualMachines_primeconmc2_name": "[concat(parameters('uniqueNamePrefix'),'mc2')]",
         "virtualMachines_primeconmcadmin_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
+        "customScriptFilePath": "[concat(parameters('artifactsPath'), '/azuremysql.sh')]",
+        "mysqlConfigFilePath": "[concat(parameters('artifactsPath'), '/my.cnf.template')]",
+        "singleQuote": "",
+        "dbSubnetStartAddress": "10.0.1.4",
+        "ipOctet01": "[concat(split(variables('dbSubnetStartAddress'), '.')[0], '.', split(variables('dbSubnetStartAddress'), '.')[1], '.')]",
+        "ipOctet2": "[int(split(variables('dbSubnetStartAddress'), '.')[2])]",
+        "ipOctet3": "[int(split(variables('dbSubnetStartAddress'), '.')[3])]",
+        "extensions_setupMySQL_name_0":"[concat(parameters('uniqueNamePrefix'),'db0/setupMySQL')]",
+        "extensions_setupMySQL_name_1":"[concat(parameters('uniqueNamePrefix'),'db1/setupMySQL')]",
         "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primecondb_lb_name'))]",
         "loadBalancer_primeconapp": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primeconapp_lb_name'))]"
     },
@@ -668,6 +702,7 @@
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc7_name'))]"
             ]
         },
+        
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Network/loadBalancers/primeconapplb'.",
             "type": "Microsoft.Network/loadBalancers",
@@ -1517,7 +1552,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/virtualMachines/primecondb0/extensions/setupMySQL'.",
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[parameters('extensions_setupMySQL_name')]",
+            "name": "[variables('extensions_setupMySQL_name_0')]",
             "apiVersion": "2016-04-30-preview",
             "location": "CentralIndia",
             "scale": null,
@@ -1531,7 +1566,9 @@
                         "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mysql-replication/azuremysql.sh"
                     ]
                 },
-                "protectedSettings": {}
+                "protectedSettings": {
+                    "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', '1', ' ','10','.','0','.','1','.','4', ' ', variables('mysqlConfigFilePath'), ' ', variables('singleQuote'), parameters('mysqlReplicationPassword'), variables('singleQuote'), ' ', variables('singleQuote'), parameters('mysqlRootPassword'), variables('singleQuote'), ' ', variables('singleQuote'), parameters('mysqlProbePassword'), variables('singleQuote'), ' ', variables('dbSubnetStartAddress'))]"
+                }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primecondb0_name'))]"
@@ -1540,7 +1577,7 @@
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/virtualMachines/primecondb1/extensions/setupMySQL'.",
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[parameters('extensions_setupMySQL_name_1')]",
+            "name": "[variables('extensions_setupMySQL_name_1')]",
             "apiVersion": "2016-04-30-preview",
             "location": "CentralIndia",
             "scale": null,
@@ -1554,7 +1591,9 @@
                         "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/mysql-replication/azuremysql.sh"
                     ]
                 },
-                "protectedSettings": {}
+                "protectedSettings": {
+                    "commandToExecute": "[concat(parameters('customScriptCommandToExecute'), ' ', '2', ' ','10','.','0','.','1','.','5', ' ', variables('mysqlConfigFilePath'), ' ', variables('singleQuote'), parameters('mysqlReplicationPassword'), variables('singleQuote'), ' ', variables('singleQuote'), parameters('mysqlRootPassword'), variables('singleQuote'), ' ', variables('singleQuote'), parameters('mysqlProbePassword'), variables('singleQuote'), ' ', variables('dbSubnetStartAddress'))]"
+                }
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/virtualMachines', variables('virtualMachines_primecondb1_name'))]"

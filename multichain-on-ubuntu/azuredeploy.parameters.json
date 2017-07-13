@@ -17,17 +17,20 @@
         "mySqlPassword": {
             "value": "GEN-PASSWORD"
         },
+        "mysqlReplicationPassword": {
+            "value": "GEN-PASSWORD"
+        },
+        "mysqlRootPassword": {
+            "value": "GEN-PASSWORD"
+        },
+        "mysqlProbePassword": {
+            "value": "GEN-PASSWORD"
+        },
         "mcNodeUsername": {
             "value": "pcmcuser"
         },
         "mcNodePassword": {
             "value": "GEN-PASSWORD"
-        },
-        "extensions_setupMySQL_name": {
-            "value": null
-        },
-        "extensions_setupMySQL_name_1": {
-            "value": null
         }
     }
 }
