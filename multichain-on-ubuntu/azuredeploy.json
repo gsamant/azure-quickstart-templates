@@ -51,14 +51,6 @@
             "defaultValue": "primeconmcadnin_datadisk",
             "type": "String"
         },
-        "disks_primeconmcnode2_OsDisk_name": {
-            "defaultValue": "primeconmcnode2_OsDisk",
-            "type": "String"
-        },
-        "snapshots_primeconmc_OsDiskSnapshot_name": {
-            "defaultValue": "primeconmc_OsDiskSnapshot",
-            "type": "String"
-        },
         "extensions_setupMySQL_name": {
             "defaultValue": "primecondb0/setupMySQL",
             "type": "String"
@@ -107,9 +99,6 @@
         "virtualMachines_primeconmc1_name": "[concat(parameters('uniqueNamePrefix'),'mc1')]",
         "virtualMachines_primeconmc2_name": "[concat(parameters('uniqueNamePrefix'),'mc2')]",
         "virtualMachines_primeconmcadmin_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin')]",
-        // "disks_primeconmc1_OsDisk_1_name":  "[concat(parameters('uniqueNamePrefix'),'mc1_OsDisk_1')]",
-        // "disks_primeconmc2_OsDisk_1_name":"[concat(parameters('uniqueNamePrefix'),'mc2_OsDisk_1')]",
-        // "disks_primeconmcadmin_OsDisk_1_name": "[concat(parameters('uniqueNamePrefix'),'mcadmin_OsDisk_1')]",
         "loadBalancer_primecondb": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primecondb_lb_name'))]",
         "loadBalancer_primeconapp": "[resourceId('Microsoft.Network/loadBalancers',variables('loadBalancers_primeconapp_lb_name'))]"
     },
@@ -189,66 +178,6 @@
             },
             "dependsOn": []
         },
-        // {
-        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318'.",
-        //     "type": "Microsoft.Compute/disks",
-        //     "name": "[variables('disks_primeconmc1_OsDisk_1_name')]",
-        //     "apiVersion": "2016-04-30-preview",
-        //     "location": "centralindia",
-        //     "scale": null,
-        //     "properties": {
-        //         "accountType": "Premium_LRS",
-        //         "osType": "Linux",
-        //         "creationData": {
-        //             "createOption": "FromImage",
-        //             "imageReference": {
-        //                 "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
-        //             }
-        //         },
-        //         "diskSizeGB": 30
-        //     },
-        //     "dependsOn": []
-        // },
-        // {
-        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85'.",
-        //     "type": "Microsoft.Compute/disks",
-        //     "name": "[variables('disks_primeconmc2_OsDisk_1_name')]",
-        //     "apiVersion": "2016-04-30-preview",
-        //     "location": "centralindia",
-        //     "scale": null,
-        //     "properties": {
-        //         "accountType": "Premium_LRS",
-        //         "osType": "Linux",
-        //         "creationData": {
-        //             "createOption": "FromImage",
-        //             "imageReference": {
-        //                 "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
-        //             }
-        //         },
-        //         "diskSizeGB": 30
-        //     },
-        //     "dependsOn": []
-        // },
-        // {
-        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2'.",
-        //     "type": "Microsoft.Compute/disks",
-        //     "name": "[variables('disks_primeconmcadmin_OsDisk_1_name')]",
-        //     "apiVersion": "2016-04-30-preview",
-        //     "location": "centralindia",
-        //     "scale": null,
-        //     "properties": {
-        //         "accountType": "Premium_LRS",
-        //         "osType": "Linux",
-        //         "creationData": {
-        //             "createOption": "FromImage",
-        //             "imageReference": {
-        //                 "id": "/Subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/Providers/Microsoft.Compute/Locations/CentralIndia/Publishers/Canonical/ArtifactTypes/VMImage/Offers/UbuntuServer/Skus/16.04-LTS/Versions/latest"
-        //             }
-        //         },
-        //         "diskSizeGB": 30
-        //     },
-        //     "dependsOn": []
-        // },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmcadnin_datadisk'.",
             "type": "Microsoft.Compute/disks",
@@ -265,46 +194,6 @@
             },
             "dependsOn": []
         },
-        {
-            "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/disks/primeconmcnode2_OsDisk'.",
-            "type": "Microsoft.Compute/disks",
-            "name": "[parameters('disks_primeconmcnode2_OsDisk_name')]",
-            "apiVersion": "2016-04-30-preview",
-            "location": "centralindia",
-            "scale": null,
-            "properties": {
-                "accountType": "Premium_LRS",
-                "osType": "Linux",
-                "creationData": {
-                    "createOption": "Copy",
-                    "sourceUri": "[resourceId('Microsoft.Compute/snapshots', parameters('snapshots_primeconmc_OsDiskSnapshot_name'))]"
-                },
-                "diskSizeGB": 30
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.Compute/snapshots', parameters('snapshots_primeconmc_OsDiskSnapshot_name'))]"
-            ]
-        },
-        // {
-        //     "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/snapshots/primeconmc_OsDiskSnapshot'.",
-        //     "type": "Microsoft.Compute/snapshots",
-        //     "name": "[parameters('snapshots_primeconmc_OsDiskSnapshot_name')]",
-        //     "apiVersion": "2016-04-30-preview",
-        //     "location": "centralindia",
-        //     "scale": null,
-        //     "properties": {
-        //         "accountType": "Premium_LRS",
-        //         "osType": "Linux",
-        //         "creationData": {
-        //             "createOption": "Copy",
-        //             "sourceUri": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]"
-        //         },
-        //         "diskSizeGB": 30
-        //     },
-        //     "dependsOn": [
-        //         "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]"
-        //     ]
-        // },
         {
             "comments": "Generalized from resource: '/subscriptions/4a004a1b-13a1-44ce-82bf-647e561cf4f1/resourceGroups/primechain-contract-prd/providers/Microsoft.Compute/virtualMachines/primeconapp0'.",
             "type": "Microsoft.Compute/virtualMachines",
@@ -607,8 +496,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Premium_LRS"//,
-                            // "id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]"
+                            "storageAccountType": "Premium_LRS"
                         },
                         "diskSizeGB": 30
                     },
@@ -639,7 +527,6 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
-                // "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc1_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic1_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc4_name'))]"
             ]
@@ -671,8 +558,7 @@
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
-                            "storageAccountType": "Premium_LRS"//,
-                             //"id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]"
+                            "storageAccountType": "Premium_LRS"
                         },
                         "diskSizeGB": 30
                     },
@@ -703,7 +589,6 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
-                // "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmc2_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmc_nic2_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc2_name'))]"
             ]
@@ -731,13 +616,11 @@
                     },
                     "osDisk": {
                         "osType": "Linux",
-                        "name": "[concat(variables('virtualMachines_primeconmcadmin_name'),'_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2')]",
+                        "name": "[concat(variables('virtualMachines_primeconmcadmin_name'),'_OsDisk_1')]",
                         "createOption": "FromImage",
                         "caching": "ReadWrite",
                         "managedDisk": {
                             "storageAccountType": "Premium_LRS"
-                            //,
-                            //"id": "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]"
                         },
                         "diskSizeGB": 30
                     },
@@ -780,7 +663,6 @@
             },
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySets_primeconmcset_name'))]",
-                // "[resourceId('Microsoft.Compute/disks', variables('disks_primeconmcadmin_OsDisk_1_name'))]",
                 "[resourceId('Microsoft.Compute/disks', parameters('disks_primeconmcadnin_datadisk_name'))]",
                 "[resourceId('Microsoft.Network/networkInterfaces', variables('networkInterfaces_primeconmcadmin_nic_name'))]",
                 "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_stracc7_name'))]"

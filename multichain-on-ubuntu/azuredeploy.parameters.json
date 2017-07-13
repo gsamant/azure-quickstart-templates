@@ -23,24 +23,6 @@
         "mcNodePassword": {
             "value": "GEN-PASSWORD"
         },
-        "disks_primeconmc1_OsDisk_1_d12e78f215c84ca68519865eed109318_name": {
-            "value": null
-        },
-        "disks_primeconmc2_OsDisk_1_a3ab08d18e6e4c138de0b64fe94f8c85_name": {
-            "value": null
-        },
-        "disks_primeconmcadmin_OsDisk_1_b3126b421a56448cb77b2d71c0dc30e2_name": {
-            "value": null
-        },
-        "disks_primeconmcadnin_datadisk_name": {
-            "value": null
-        },
-        "disks_primeconmcnode2_OsDisk_name": {
-            "value": null
-        },
-        "snapshots_primeconmc_OsDiskSnapshot_name": {
-            "value": null
-        },
         "extensions_setupMySQL_name": {
             "value": null
         },
